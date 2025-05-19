@@ -28,22 +28,17 @@ jobs:
       - name: Run data collection and cleaning script
         run: python BikeShareTO/query_bikeshare.py
 
-      - name: Commit and push data if relevant
+      - name: Commit and push data to data-logs branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          
+      
+          git checkout -B data-logs
+      
           git add BikeShareTO/station_status/station_status_log.csv BikeShareTO/station_status/station_status_recent.csv
       
-          # Check what's staged and exclude Pages-triggering files
-          CHANGED=$(git diff --cached --name-only | grep -vE '^docs/|^index.html$' || true)
+          git commit -m "Update bike share data $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
       
-          if [ -z "$CHANGED" ]; then
-            echo "Only data files changed — skipping commit and push."
-            exit 0
-          fi
-      
-          git commit -m "Update bike share data $(date +'%Y-%m-%d %H:%M:%S')"
-          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:${{ github.ref_name }}
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:data-logs
