@@ -29,6 +29,6 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add BikeShareTO/station_status/station_status_log.csv BikseShareTO/station_status/station_status_recent.csv
+          git add BikeShareTO/station_status/station_status_log.csv BikeShareTO/station_status/station_status_recent.csv
           git commit -m "Update bike share data $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
           git push
