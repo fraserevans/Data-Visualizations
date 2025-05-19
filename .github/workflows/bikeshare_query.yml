@@ -35,10 +35,13 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
       
-          git checkout -B data-logs
+          # Make sure local repo is up to date
+          git fetch origin data-logs
+      
+          # Create or switch to data-logs branch
+          git checkout -B data-logs origin/data-logs
       
           git add BikeShareTO/station_status/station_status_log.csv BikeShareTO/station_status/station_status_recent.csv
       
           git commit -m "Update bike share data $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
-      
-          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:data-logs
+
