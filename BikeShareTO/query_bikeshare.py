@@ -11,8 +11,8 @@ stations = data["data"]["stations"]
 
 # Add timestamp to each station
 current_time = int(time.time())
-for station in stations:
-    station["last_queried"] = current_time
+#for station in stations:
+#    station["last_queried"] = current_time
 
 # Define file paths
 os.makedirs("BikeShareTO/station_status", exist_ok=True)
