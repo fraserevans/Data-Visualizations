@@ -23,7 +23,7 @@ recent_file = "BikeShareTO/station_status/station_status_recent.csv"
 df = pd.DataFrame(stations)
 
 # Drop unwanted columns
-drop_cols = ["is_charging", "is_installed", "status", 'is_returning', 'traffic', 'is_renting']
+drop_cols = ["is_charging_station", "is_installed", "status", 'is_returning', 'traffic', 'is_renting']
 df = df.drop(columns=[col for col in drop_cols if col in df.columns])
 
 # Load existing log if it exists
