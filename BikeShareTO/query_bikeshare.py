@@ -15,9 +15,9 @@ for station in stations:
     station["last_queried"] = current_time
 
 # Define file paths
-os.makedirs("station_status", exist_ok=True)
-log_file = "station_status/station_status_log.csv"
-recent_file = "station_status/station_status_recent.csv"
+os.makedirs("BikeShareTO/station_status", exist_ok=True)
+log_file = "BikeShareTO/station_status/station_status_log.csv"
+recent_file = "BikeShareTO/station_status/station_status_recent.csv"
 
 # Convert to DataFrame
 df = pd.DataFrame(stations)
