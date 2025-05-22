@@ -3,23 +3,16 @@ layout: default
 title: Home
 ---
 
-<h1>Toronto Running History</h1>
+<h1>Bike Share Toronto Availability Dashboard</h1>
 
 <p>
-  Running history in Toronto from October 2022 to March 2025, covering <strong>2795 entire unique streets</strong> across <strong>281 runs</strong>.
+  Visit <a href="https://fraser-evans.shinyapps.io/bikesharedashboard/" target="_blank">here</a> for the dashboard!
 </p>
 
 <p>
-  Shoutout to <a href="https://citystrides.com/" target="_blank">citystrides.com</a> for help in tracking completed streets.
+  Dock and bike availability for 880 Bike Share Toronto stations, both live and over the last 24 hours
 </p>
 
 <p>
-  See <a href="https://github.com/fraserevans/Data-Visualizations/blob/main/Toronto_running_history/Toronto_running_history.ipynb" target="_blank">here</a> for the Python code used to generate the animation.
+  Availability is queried every ~10 minutes from <a href="https://open.toronto.ca/dataset/bike-share-toronto/">here</a>, or every 60 seconds when the dashboard is live, using an automated Python script found <a href="https://github.com/fraserevans/Data-Visualizations/blob/main/BikeShareTO/query_bikeshare.py" target="_blank">here</a>.
 </p>
-
-<h2>Running Animation</h2>
-
-<video autoplay loop muted playsinline controls style="max-width: 100%; height: auto;">
-  <source src="myruns_Toronto.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
