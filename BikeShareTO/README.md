@@ -1,8 +1,7 @@
-# Data-Visualizations
-Ongoing collection of various data visualization projects.
+# Bike Share Toronto Availability Dashboard
 
-## Projects
+  Visit [here](https://fraser-evans.shinyapps.io/bikesharedashboard/) for the dashboard!
 
-[Toronto Running History](Toronto_running_history/) -- Animation of 2.5 years of my running activities across Toronto.
+  Dock and bike availability for 880 Bike Share Toronto stations, both live and over the last 24 hours
 
-[Bike Share TO dashboard](BikeShareTO/) -- A live dashboard of the number of bikes and docks available at each Bike Share Toronto station.
+  Availability is queried every ~10 minutes from [here](https://open.toronto.ca/dataset/bike-share-toronto), or every 60 seconds when the dashboard is live, using an automated Python script found [here](https://github.com/fraserevans/Data-Visualizations/blob/main/BikeShareTO/query_bikeshare.py).
