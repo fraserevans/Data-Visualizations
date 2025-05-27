@@ -42,6 +42,6 @@ df = df[df["last_reported"] >= one_month_ago]
 df.to_csv(log_file, index=False)
 
 # Save recent (last 24 hours) data
-one_day_ago = current_time - 24 * 3600
-recent_df = df[df["last_reported"] >= one_day_ago]
+two_days_ago = current_time - 48 * 3600
+recent_df = df[df["last_reported"] >= two_days_ago]
 recent_df.to_csv(recent_file, index=False)
